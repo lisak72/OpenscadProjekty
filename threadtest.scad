@@ -25,15 +25,15 @@ module thread() {
 		polygon(points=helix_arm);
 	}
 }
-
+/*
 module wedge() {
-	translate([0,0,-epsilon])
+            translate([0,0,-epsilon])
 	intersection() {
 		cube(100);
 		rotate([0,0,80])
 		cube(100);
 	}
 }
-
+*/
 thread(){}
-wedge(){}
+//wedge(){}
