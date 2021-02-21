@@ -32,11 +32,19 @@ module dira(xd,yd,zd){
    translate([6.5,1,0]) cylinder(3.2,1,$fn=100);
 }}}
 
+module dira90(xd,yd,zd){
+translate([xd+1,yd,zd]){
+rotate([0,0,0]){
+translate([0.5,0,0]) cube([6,2,3.2]);
+        translate([0.5,1,0]) cylinder(3.2,1,$fn=100);
+translate([6.5,1,0]) cylinder(3.2,1,$fn=100);
+}}}
+
 module diry(){
     module serie_der(xsd){
     dira(50+xsd,5,2.9);
     dira(50+xsd,20,2.9);
-    dira(55+xsd,12,2.9);
+    dira90(45+xsd,15,2.9);
 }
     module zkoseni_hrany(xzk,yzk,lp){
 translate([xzk,yzk]){
