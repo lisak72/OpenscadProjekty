@@ -9,8 +9,8 @@ difference(){
 translate([0,0,20]){
 difference(){
 //vnejsi trubka
-cylinder(h=40,r=5,center=true,$fn=100);
+cylinder(h=40,r=5.2,center=true,$fn=100);
 //vnitrni trubka odectena
-cylinder(h=41,r=4.5,center=true,$fn=100);
+cylinder(h=41,r=4.8,center=true,$fn=100);
 }
 }
