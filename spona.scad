@@ -1,12 +1,12 @@
 
-y_delka=58;
+y_delka=78;
 
 module prvni_kruh(){
 difference(){   
    cylinder(h=1.4,r=7, $fn=100); 
 translate([0,0,-0.1]) cylinder(h=1.6,r=2, $fn=100); //odectena
 //vyrez
-rotate(45) translate([0,0,-0.1]) cube([0.3,7,1.6]);
+rotate(45) translate([0,0,-0.1]) cube([0.5,7,1.6]);
 }
 }
 
