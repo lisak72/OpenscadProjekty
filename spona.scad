@@ -1,5 +1,5 @@
 
-y_delka=98;
+y_delka=118;
 
 module prvni_kruh(){
 difference(){   
