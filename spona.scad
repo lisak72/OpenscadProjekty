@@ -11,11 +11,16 @@ rotate(45) translate([0,0,-0.1]) cube([0.5,7,1.6]);
 }
 
 module spojka(){
+difference(){
 hull(){
 translate([-2.8,3,0]) cube([7,5,1.4]); //prvni kostka v prvnim kruhu
 translate([-2,y_delka,0]) cube([4.5,5,1.4]); //druha v druhem kruhu
 }
+hull(){ //odectena dira
+translate([-0.4,10,-0.1]) cube([2,5,1.6]); //prvni kostka v prvnim kruhu
+translate([-0.4,y_delka-5,-0.1]) cube([1,5,1.6]); //druha v druhem kruhu
 }
+}}
 
 module druhy_kruh0(){
 //translate([8.5,46,0]){
