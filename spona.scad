@@ -1,5 +1,5 @@
 
-y_delka=148;
+y_delka=128; //148 extra dlouha, 128 stred
 
 module prvni_kruh(){
 difference(){   
