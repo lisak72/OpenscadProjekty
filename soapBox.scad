@@ -1,17 +1,19 @@
 
 x_length=80;
 y_length=70;
-z_length=9;
-rot=6; //angle of cuted segment
-num=7; //number of cuted segment
-perc=35;  //percent of cutted surface
+z_length=19;
+rot=16; //angle of cuted segment
+num=6; //number of cuted segment
+perc=45;  //percent of cutted surface
+shift=1.3; //shift of cuted segments to left
+far_border_length=0.1; //far border length
 oneCellXlength=x_length/num; //is computed
 
 
 module cutfn(xl,yl,zl,rot){ //module cutter
 perc=(10/perc);
 translate([perc*(xl/num),0,0]){
-yl=yl-0.2*yl;//math
+yl=yl-far_border_length*yl;//math
 xl=(xl/num)-perc*(xl/num);
 rotate([rot,0,0]){
 cube([xl,yl,zl]);
@@ -25,7 +27,7 @@ cube([x_length,y_length,z_length]);
 difference(){
 main_cube();
 for(i=[0:1:num]){
-    xt=oneCellXlength*i-1.1; //-0.5obfuscated, do it better!
+    xt=oneCellXlength*i-shift;
 //echo (xt);
 translate([xt,0,0]) cutfn(x_length,y_length,z_length,rot);
 }
