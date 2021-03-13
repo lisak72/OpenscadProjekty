@@ -1,10 +1,10 @@
 
-x_length=23;
-y_length=15;
-z_length=5;
-rot=20; //angle of cuted segment
+x_length=60;
+y_length=50;
+z_length=9;
+rot=10; //angle of cuted segment
 num=5; //number of cuted segment
-perc=30;  //percent of cutted surface
+perc=50;  //percent of cutted surface
 oneCellXlength=x_length/num; //is computed
 
 
@@ -25,7 +25,7 @@ cube([x_length,y_length,z_length]);
 difference(){
 main_cube();
 for(i=[0:1:num]){
-    xt=oneCellXlength*i-1; //-1obfuscated, do it better!
+    xt=oneCellXlength*i-0.5; //-0.5obfuscated, do it better!
 //echo (xt);
 translate([xt,0,0]) cutfn(x_length,y_length,z_length,rot);
 }
