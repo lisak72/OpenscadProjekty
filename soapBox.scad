@@ -1,9 +1,9 @@
 
-x_length=80;
-y_length=70;
-z_length=19;
-rot=16; //angle of cuted segment
-num=5; //number of cuted segment
+x_length=110;
+y_length=85;
+z_length=12;
+rot=8; //angle of cuted segment
+num=7; //number of cuted segment
 perc=45;  //percent of cutted surface
 shift=1.5; //shift of cuted segments to left
 far_border_length=0.1; //far border length multiplier (0.1 is 10 percent)
