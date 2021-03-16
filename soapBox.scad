@@ -2,7 +2,7 @@
 x_length=110;
 y_length=85;
 z_length=12;
-rot=8; //angle of cuted segment
+rot=7; //angle of cuted segment
 num=7; //number of cuted segment
 perc=45;  //percent of cutted surface
 shift=1.5; //shift of cuted segments to left
@@ -30,4 +30,6 @@ for(i=[0:1:num]){
     xt=oneCellXlength*i-shift;
 translate([xt,0,0]) cutfn(x_length,y_length,z_length,rot);
 }
+sphere_radius=x_length*3;
+translate([x_length/2,y_length/3,sphere_radius+z_length/2]) sphere(sphere_radius, $fn=200);
 }
