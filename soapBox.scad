@@ -1,6 +1,6 @@
 
-x_length=110;
-y_length=85;
+x_length=70;
+y_length=60;
 z_length=12;
 rot=7; //angle of cuted segment
 num=7; //number of cuted segment
@@ -17,8 +17,9 @@ yl=yl-far_border_length*yl;
 xl=(xl/num)-perc*(xl/num);
 rotate([rot,0,0]){
 cube([xl,yl,zl]);
-translate([xl/2,yl,0]) cylinder(h=z_length,r=xl/2, $fn=100);
-}}}
+translate([xl/2,yl,0]) cylinder(h=z_length,r=xl/2, $fn=100);}
+translate([xl/2,yl,-z_length]) rotate([0,0,90])cylinder(h=z_length*3,r=xl/2, $fn=100);
+}}
 
 module main_cube(){
 cube([x_length,y_length,z_length]);
