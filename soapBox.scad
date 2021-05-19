@@ -1,7 +1,7 @@
 
-x_length=70;
-y_length=60;
-z_length=12;
+x_length=35;
+y_length=30;
+z_length=4;
 rot=7; //angle of cuted segment
 num=7; //number of cuted segment
 perc=45;  //percent of cutted surface

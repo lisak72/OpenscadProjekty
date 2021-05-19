@@ -1,13 +1,13 @@
 //deck
-box_x=37;
-box_y=54;
+box_x=32;
+box_y=38;
 deck_z=2;
 borders_z=4;
 borders_width=2;
 //only for box
-hole_radius=1.7;
-hole_z=9;
-box_z=20;
+hole_radius=2.7;
+hole_z=18;
+box_z=22;
 
 
 module deck1() {
@@ -47,8 +47,8 @@ rotate([90,0,0]) cylinder(h=5,r=hole_radius, $fn=100); //cylinder for cutting ho
 translate([box_x+5,0,0]){    
 difference(){
 box1();
-translate([10,3,hole_z]) cylinderCut();
-translate([15,3,hole_z]) cylinderCut();
+translate([5,3,hole_z]) cylinderCut();
+translate([28,3,hole_z]) cylinderCut();
 translate([22,box_y+1,hole_z]) cylinderCut();
 }}
 
