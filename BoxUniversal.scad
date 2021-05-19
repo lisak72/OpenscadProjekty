@@ -1,13 +1,16 @@
-//deck
-box_x=32;
-box_y=38;
-deck_z=2;
+inside_x=37;
+inside_y=54;
+inside_z=20;
 borders_z=4;
 borders_width=2;
+//deck
+box_x=inside_x+borders_width*2;
+box_y=inside_y+borders_width*2;
+deck_z=2;
 //only for box
-hole_radius=2.7;
-hole_z=18;
-box_z=22;
+hole_radius=1.7;
+hole_z=9;
+box_z=inside_z+borders_width+deck_z;
 
 
 module deck1() {
