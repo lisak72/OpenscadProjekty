@@ -4,7 +4,7 @@ diameterh=110.2; //inside diameter bigger
 hh=10;
 thickn=2; //thickness
 connAngle=45;
-connl=((diameterh-diameterl)/2)/sin(45)+thickn/2; //length of connection (45deg side)
+connl=((diameterh-diameterl)/2)/sin(connAngle)+thickn/2; //length of connection (45deg side)
 $fn=300;
 
 module cyl1(){ //bigger
