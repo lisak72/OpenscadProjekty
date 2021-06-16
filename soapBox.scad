@@ -1,10 +1,10 @@
 
-x_length=35;
-y_length=30;
-z_length=4;
+x_length=110;
+y_length=90;
+z_length=12;
 rot=7; //angle of cuted segment
 num=7; //number of cuted segment
-perc=45;  //percent of cutted surface
+perc=55;  //percent of cutted surface
 shift=1.5; //shift of cuted segments to left
 far_border_length=0.1; //far border length multiplier (0.1 is 10 percent)
 oneCellXlength=x_length/num; //is computed
