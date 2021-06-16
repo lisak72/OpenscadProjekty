@@ -4,7 +4,7 @@ diameterh=110.2; //inside diameter bigger
 hh=10;
 thickn=2; //thickness
 connAngle=45;
-connl=((diameterh-diameterl)/2)/sin(45);
+connl=((diameterh-diameterl)/2)/sin(45)+thickn/2; //length of connection (45deg side)
 $fn=300;
 
 module cyl1(){ //bigger
@@ -19,4 +19,4 @@ module connection(){
 
 translate([0,0,hh/2]) cyl1();
 translate([0,0,hl/2+hh+cos(connAngle)*connl]) cyl2();
-translate([0,0,cos(connAngle)*connl/2+hh]) connection();
+translate([0,0,(cos(connAngle)*connl/2)+hh]) connection();
