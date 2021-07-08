@@ -1,9 +1,9 @@
-diameterl=55.6; //inside diameter smaller
+diameterl=90.6; //inside diameter smaller
 hl=20;
 diameterh=110.6; //inside diameter bigger
 hh=10;
 thickn=2; //thickness
-connAngle=45;
+connAngle=35;
 distance=(diameterh-diameterl)/2;
 connl=(((distance)/sin(connAngle))+thickn/2); //length of connection (45deg side)
 $fn=300;

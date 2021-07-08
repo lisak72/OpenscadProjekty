@@ -1,6 +1,6 @@
 
-x_length=110;
-y_length=90;
+x_length=95;
+y_length=80;
 z_length=12;
 rot=7; //angle of cuted segment
 num=7; //number of cuted segment

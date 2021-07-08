@@ -1,6 +1,6 @@
-inside_x=65;
-inside_y=70;
-inside_z=33;
+inside_x=22;
+inside_y=37;
+inside_z=32;
 borders_z=7;
 borders_width=2;
 //deck
@@ -8,8 +8,8 @@ box_x=inside_x+borders_width*2;
 box_y=inside_y+borders_width*2;
 deck_z=2;
 //only for box
-hole_radius=2.7;
-hole_z=10;
+hole_radius=1.5;
+hole_z=24;
 box_z=inside_z+borders_width+deck_z;
 
 
@@ -50,10 +50,10 @@ rotate([90,0,0]) cylinder(h=5,r=hole_radius, $fn=100); //cylinder for cutting ho
 translate([box_x+5,0,0]){    
 difference(){
 box1();
-translate([18,3,hole_z]) cylinderCut();
-translate([28,3,hole_z]) cylinderCut();
-translate([18,box_y+1,hole_z]) cylinderCut();
-translate([28,box_y+1,hole_z]) cylinderCut();
+translate([4,3,hole_z]) cylinderCut();
+translate([22,3,hole_z]) cylinderCut();
+translate([10,box_y+1,hole_z]) cylinderCut();
+translate([16,box_y+1,hole_z]) cylinderCut();
 }}
 
 
