@@ -1,6 +1,6 @@
-diameterl=90.6; //inside diameter smaller
+diameterl=9.5; //inside diameter smaller
 hl=20;
-diameterh=110.6; //inside diameter bigger
+diameterh=36; //inside diameter bigger
 hh=10;
 thickn=2; //thickness
 connAngle=35;
