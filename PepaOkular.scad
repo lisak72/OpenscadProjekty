@@ -3,7 +3,7 @@ hl=20;
 diameterh=36; //inside diameter bigger
 hh=10;
 thickn=2; //thickness
-connAngle=35;
+connAngle=45;
 distance=(diameterh-diameterl)/2;
 connl=(((distance)/sin(connAngle))+thickn/2); //length of connection (45deg side)
 $fn=300;
@@ -20,5 +20,5 @@ module connection(){
 }
 
 translate([0,0,hh/2]) cyl1();
-translate([0,0,hl/2+hh+cos(connAngle)*(distance)]) cyl2();
-translate([0,0,((cos(connAngle)*distance)+hh)-(0.5*(cos(connAngle)*distance))]) connection();
+translate([0,0,hl/2+hh+cos(connAngle)*(distance+thickn)]) cyl2();
+translate([0,0,((cos(connAngle)*(distance+thickn))+hh)-(0.5*(cos(connAngle)*(distance)))]) connection();
