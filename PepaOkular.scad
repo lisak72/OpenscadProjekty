@@ -1,8 +1,8 @@
-diameterl=9.5; //inside diameter smaller
+diameterl=8; //inside diameter smaller
 hl=20;
 diameterh=36; //inside diameter bigger
 hh=10;
-thickn=2; //thickness
+thickn=1.6; //thickness
 connAngle=25;
 distance=(diameterh-diameterl)/2;
 connl=(((distance)/sin(connAngle))+thickn/2); //length of connection (45deg side)
