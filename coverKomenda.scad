@@ -10,7 +10,7 @@ cylinder(h=thickness,d=diameter,center=false, $fn=100);
 
 module borders(){
 rotate_extrude(){
-    translate([diameter/2,0,0]) rotate([0,0,angle]) square([thickness,z_dim]);
+    translate([diameter/2,0,0]) rotate([0,0,angle]) square([thickness,z_dim+thickness]);
 } }
 
 maincylinder();
