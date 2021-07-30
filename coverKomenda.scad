@@ -1,7 +1,7 @@
-diameter=36.5;
+diameter=36.2;
 z_dim=9.0;
-angle=5;
-thickness=1;
+angle=-5;
+thickness=2;
 $fn=100;
 
 module maincylinder(){
