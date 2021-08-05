@@ -1,23 +1,27 @@
-inside_x=65;
-inside_y=70;
-inside_z=33;
-borders_z=7;
+inside_x=76;
+inside_y=88;
+inside_z=25;
+borders_z=5;
 borders_width=2;
 //deck
 box_x=inside_x+borders_width*2;
 box_y=inside_y+borders_width*2;
 deck_z=2;
 //only for box
-hole_radius=2.7;
-hole_z=10;
+hole_radius=3;
+hole_z=22;
 box_z=inside_z+borders_width+deck_z;
-
+//displayhole
+disp_x=30;
+disp_y=20;
+movedisp_x=0;
+movedisp_y=17;
 
 module deck1() {
-
+difference(){
 cube([box_x,box_y,deck_z]);
-
-}
+translate([movedisp_x,movedisp_y,0]) cube([disp_x,disp_y,deck_z]); //displayhole
+}}
 
 
 module squareBorders(x_length,y_length,z_length,width){
@@ -50,8 +54,8 @@ rotate([90,0,0]) cylinder(h=5,r=hole_radius, $fn=100); //cylinder for cutting ho
 translate([box_x+5,0,0]){    
 difference(){
 box1();
-translate([18,3,hole_z]) cylinderCut();
-translate([28,3,hole_z]) cylinderCut();
+//translate([18,3,hole_z]) cylinderCut();
+//translate([28,3,hole_z]) cylinderCut();
 translate([18,box_y+1,hole_z]) cylinderCut();
 translate([28,box_y+1,hole_z]) cylinderCut();
 }}
