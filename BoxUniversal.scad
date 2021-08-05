@@ -14,7 +14,7 @@ box_z=inside_z+borders_width+deck_z;
 //displayhole
 disp_x=30;
 disp_y=20;
-movedisp_x=0;
+movedisp_x=1;
 movedisp_y=17;
 
 module deck1() {
