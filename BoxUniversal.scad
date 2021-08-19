@@ -1,6 +1,6 @@
 inside_x=76;
 inside_y=88;
-inside_z=25;
+inside_z=22;
 borders_z=5;
 borders_width=2;
 //deck
@@ -15,7 +15,7 @@ box_z=inside_z+borders_width+deck_z;
 disp_x=30;
 disp_y=20;
 movedisp_x=1;
-movedisp_y=17;
+movedisp_y=25;
 
 module deck1() {
 difference(){
@@ -33,6 +33,8 @@ translate([width,width,-1]) cube([x_length-2*width,y_length-2*width,z_length+3])
 }
 }
 
+//deck
+
 deck1();
     
 translate([borders_width,borders_width,0]) squareBorders(box_x-2*borders_width,box_y-2*borders_width,borders_z,borders_width);
@@ -44,7 +46,7 @@ translate([borders_width,borders_width,0]) squareBorders(box_x-2*borders_width,b
 module box1() {
 difference(){
 cube([box_x,box_y,box_z]);
-translate([2,2,+3]) cube([box_x-borders_width*2,box_y-borders_width*2,box_z+9]);}
+translate([borders_width,borders_width,borders_width]) cube([box_x-borders_width*2,box_y-borders_width*2,box_z+9]);}
 }
 
 module cylinderCut(){
