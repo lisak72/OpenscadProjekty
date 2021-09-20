@@ -2,10 +2,12 @@ circle_outside_diameter=15;
 nut_outside_diameter=10.3;
 //nut_sides=6;
 nut_z=11; //main z dimension
-blade_length=36; //26 from virtual center
+blade_length=23.5; //26 from virtual center
 blade_angle=60;
 blade_thickn=5;
 rotorThickn=4;
+bladeyMove=2;
+bladexMove=1; //0 to 1 optimal
 
 $fn = 64;
 
@@ -28,8 +30,8 @@ blades();
 }
 
 module blades(){
-rotate([0,0,blade_angle]) translate([0,nut_outside_diameter/2-2,-nut_z/2]) cube([blade_thickn,blade_length,nut_z],center=false);
-rotate([0,0,360/3]) rotate([0,0,blade_angle]) translate([0,nut_outside_diameter/2-2,-nut_z/2]) cube([blade_thickn,blade_length,nut_z],center=false);
-rotate([0,0,2*360/3]) rotate([0,0,blade_angle]) translate([0,nut_outside_diameter/2-2,-nut_z/2]) cube([blade_thickn,blade_length,nut_z],center=false);
+rotate([0,0,blade_angle]) translate([bladexMove,nut_outside_diameter/2-bladeyMove,-nut_z/2]) cube([blade_thickn,blade_length,nut_z],center=false);
+rotate([0,0,360/3]) rotate([0,0,blade_angle]) translate([bladexMove,nut_outside_diameter/2-bladeyMove,-nut_z/2]) cube([blade_thickn,blade_length,nut_z],center=false);
+rotate([0,0,2*360/3]) rotate([0,0,blade_angle]) translate([bladexMove,nut_outside_diameter/2-bladeyMove,-nut_z/2]) cube([blade_thickn,blade_length,nut_z],center=false);
 
 }
