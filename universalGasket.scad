@@ -1,9 +1,9 @@
 //in milimeters
 //material flex
 //t 90/245
-hole_diameter=54;
-outer_diameter=64;
-thickness=2;
+hole_diameter=33;
+outer_diameter=85;
+thickness=1;
 $fn=400;
 
 translate([0,0,thickness/2]){
