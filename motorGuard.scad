@@ -1,4 +1,5 @@
 diameter_inside=81;
+diameter_inside_short=30;
 thickness=2;
 height=200;
 bottomSide=2;
@@ -12,8 +13,16 @@ screww=2;
 
 //translate([0,0,height/2]) hose();
 support_triangle(striangle_l,striangle_w,striangle_h);
+box();
 
-
+module box() {
+difference(){
+//outside 
+cube([diameter_inside+thickness*2,diameter_inside_short+thickness*2, height], center=true);
+//vnitrni trubka odectena
+translate([0,0,bottomSide]) cube([diameter_inside,diameter_inside_short, height], center=true);
+}
+}
 
 module hose() {
 difference(){
