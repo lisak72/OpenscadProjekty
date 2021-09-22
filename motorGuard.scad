@@ -1,19 +1,28 @@
 diameter_inside=81;
-diameter_inside_short=30;
+diameter_inside_short=40;
 thickness=2;
 height=200;
 bottomSide=2;
 //support triangle
 striangle_l=10;
 striangle_w=10;
-striangle_h=25;
+striangle_h=45;
 screwl=10;
 screww=2;
-
+triangle_position_h=(height-(striangle_h+screwl)-height/2);
+triangle_difference=-striangle_w/2;
+triangle_position_l=diameter_inside/2+triangle_difference;
+triangle_position_w=diameter_inside_short/2+triangle_difference;
 
 //translate([0,0,height/2]) hose();
-support_triangle(striangle_l,striangle_w,striangle_h);
+translate([triangle_position_l,triangle_position_w,triangle_position_h]) support_triangle(striangle_l,striangle_w,striangle_h);
+translate([-triangle_position_l,triangle_position_w,triangle_position_h]) support_triangle(striangle_l,striangle_w,striangle_h);
+translate([triangle_position_l,-triangle_position_w,triangle_position_h]) rotate([0,0,180]) support_triangle(striangle_l,striangle_w,striangle_h);
+translate([-triangle_position_l,-triangle_position_w,triangle_position_h]) rotate([0,0,180]) support_triangle(striangle_l,striangle_w,striangle_h);
+
 box();
+
+
 
 module box() {
 difference(){
