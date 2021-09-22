@@ -1,7 +1,7 @@
-diameter_inside=81;
-diameter_inside_short=40;
+diameter_inside=112.5;
+diameter_inside_short=91;
 thickness=2;
-height=200;
+height=124;
 bottomSide=2;
 //support triangle
 striangle_l=10;
