@@ -27,7 +27,7 @@ box();
 module box() {
 difference(){
 //outside 
-cube([diameter_inside+thickness*2,diameter_inside_short+thickness*2, height], center=true);
+cube([diameter_inside+(thickness*2),diameter_inside_short+(thickness*2), height], center=true);
 //vnitrni trubka odectena
 translate([0,0,bottomSide]) cube([diameter_inside,diameter_inside_short, height], center=true);
 }
