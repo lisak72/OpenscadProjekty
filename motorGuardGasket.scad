@@ -1,13 +1,15 @@
-diameter_inside=110;
-diameter_inside_short=88;
-thickness=5;
+diameter_inside=107;
+diameter_inside_short=85;
+thickness=8;
 height=2;
+height_outside_part=10;
+outside_part_thickness=2;
 bottomSide=0;
 //support triangle
 striangle_l=10;
 striangle_w=10;
 striangle_h=2;
-screwl=1;
+screwl=2;
 screww=2;
 triangle_position_h=(height-(striangle_h+screwl)-height/2);
 triangle_difference=-striangle_w/2;
@@ -21,7 +23,7 @@ translate([triangle_position_l,-triangle_position_w,triangle_position_h]) rotate
 translate([-triangle_position_l,-triangle_position_w,triangle_position_h]) rotate([0,0,180]) support_triangle(striangle_l,striangle_w,striangle_h);
 
 box();
-
+translate([0,0,height_outside_part/2]) box_outside();
 
 
 module box() {
@@ -32,6 +34,15 @@ cube([diameter_inside+(thickness*2),diameter_inside_short+(thickness*2), height]
 translate([0,0,bottomSide]) cube([diameter_inside,diameter_inside_short, height], center=true);
 }
 }
+
+module box_outside() {
+difference(){
+//outside 
+cube([diameter_inside+(thickness*2),diameter_inside_short+(thickness*2), height_outside_part], center=true);
+//vnitrni trubka odectena
+translate([0,0,bottomSide]) cube([diameter_inside+(thickness*2)-2*outside_part_thickness,diameter_inside_short+(thickness*2)-2*outside_part_thickness, height_outside_part], center=true);
+}
+}    
 
 module hose() {
 difference(){
