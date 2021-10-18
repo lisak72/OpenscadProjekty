@@ -1,6 +1,9 @@
   $fn=100;
+  weight=2;
+  h=1;
+  middle=1;
   rotate_extrude()
  minkowski(){ 
-    polygon([[2,1],[1,0],[2,-1],[2.1,-1],[1.1,0],[2.1,1]]);
+    polygon([[weight,1],[middle,0],[weight,-1],[weight+0.1,-1],[middle+0.1,0],[weight+0.1,1]]);
     circle(0.1);
      }
