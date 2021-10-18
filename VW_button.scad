@@ -12,24 +12,31 @@ mmiddle=middle/2;
 
 
 module mainbutton(){
+//mirror([0,0,1])
+{
 union(){
-rotate_extrude(){
+hull() rotate_extrude(){
   minkowski(){ 
-     polygon([[mweight,mh],[mmiddle,0],[mweight,-mh],[mweight+0.1,-mh],[mmiddle+0.1,0],[mweight+0.1,mh]]);
+     polygon([[mweight,mh],[mmiddle,0],[mmiddle+0.1,0],[mweight+0.1,mh]]);
     circle(0.1);
      }}
      translate([0,0,mh]) cylinder(r=mweight);
-     translate([0,0,-mh]) cylinder(r=mweight);
+     cylinder(d=middle);
+    // translate([0,0,-mh]) cylinder(r=mweight);
+}
 }
 }
 
 module screwhole(){
 translate([0,0,(h-screwh)]) cylinder(h=screwh,d=screwd);
-
 }
 
+module mainbutton2(){
+mainbutton();
+mirror([0,0,1]) mainbutton();
+}
 
 difference(){
-mainbutton();
+mainbutton2();
 screwhole();
 }
