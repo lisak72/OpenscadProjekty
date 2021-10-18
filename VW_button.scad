@@ -22,13 +22,12 @@ hull() rotate_extrude(){
      }}
      translate([0,0,mh]) cylinder(r=mweight);
      cylinder(d=middle);
-    // translate([0,0,-mh]) cylinder(r=mweight);
 }
 }
 }
 
 module screwhole(){
-translate([0,0,(h-screwh)]) cylinder(h=screwh,d=screwd);
+translate([0,0,(h-screwh)]) cylinder(h=screwh,d=screwd, center=true);
 }
 
 module mainbutton2(){
