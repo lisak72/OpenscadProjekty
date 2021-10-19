@@ -1,15 +1,16 @@
   $fn=100;
+  minkowski_f=2.01;
   weight=23;
   h=18;
   middle=13;
   screwh=16;
-  screwd=5;
-  nutd=10;
+  screwd=6;
+  nutd=12;
   nuth=8;
 //compute
-mweight=weight/2;
+mweight=weight/2-minkowski_f;
 mh=h/2;
-mmiddle=middle/2;
+mmiddle=middle/2-minkowski_f;
 
 
 
@@ -19,7 +20,7 @@ union(){
 hull() rotate_extrude(){
   minkowski(){ 
      polygon([[mweight,mh],[mmiddle,0],[mmiddle+0.1,0],[mweight+0.1,mh]]);
-    circle(0.1);
+    circle(minkowski_f);
      }}
      translate([0,0,mh]) cylinder(r=mweight);
      cylinder(d=middle);
