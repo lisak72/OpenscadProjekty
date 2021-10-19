@@ -3,7 +3,9 @@
   h=18;
   middle=13;
   screwh=16;
-  screwd=4;
+  screwd=5;
+  nutd=10;
+  nuth=8;
 //compute
 mweight=weight/2;
 mh=h/2;
@@ -13,7 +15,6 @@ mmiddle=middle/2;
 
 module mainbutton(){
 //mirror([0,0,1])
-{
 union(){
 hull() rotate_extrude(){
   minkowski(){ 
@@ -24,10 +25,14 @@ hull() rotate_extrude(){
      cylinder(d=middle);
 }
 }
-}
+
 
 module screwhole(){
 translate([0,0,(h-screwh)]) cylinder(h=screwh,d=screwd, center=true);
+}
+
+module nuthole(){
+  translate([0,0,(h-nuth)]) cylinder(h=nuth,d=nutd,center=true);
 }
 
 module mainbutton2(){
@@ -38,4 +43,5 @@ mirror([0,0,1]) mainbutton();
 difference(){
 mainbutton2();
 screwhole();
+nuthole();
 }
