@@ -1,5 +1,5 @@
   $fn=100;
-  minkowski_f=2.01;
+  minkowski_f=3.25;
   weight=23;
   h=18;
   middle=13;
