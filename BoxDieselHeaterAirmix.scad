@@ -1,7 +1,7 @@
 inside_x=120;
 inside_y=120;
 inside_z=75;
-borders_z=5;
+borders_z=7;
 borders_width=2;
 //deck
 box_x=inside_x+borders_width*2;
@@ -76,6 +76,6 @@ box1();
 }}
 //}
 
-boxWithHoles();
-//deck();
+//boxWithHoles();
+deck();
 
