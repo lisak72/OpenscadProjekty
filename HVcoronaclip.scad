@@ -1,4 +1,4 @@
-git delka=10;
+delka=10;
 delka_strany=11;
 uhel=10;
 tloustka=2;
