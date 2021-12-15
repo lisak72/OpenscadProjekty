@@ -2,4 +2,4 @@
 !/.gitignore
 !/*.scad
 !/*.readme
-!/stlMySamples/*.stl
+!/stlMySamples
