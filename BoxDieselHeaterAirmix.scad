@@ -27,6 +27,10 @@ disp_x=93;
 //disp_y=20;
 movedisp_x=inside_x/2;
 movedisp_y=inside_y/2;
+//hose
+hose_h=20;
+hose_inside_diameter=19.5;
+hose_thickness=1;
 
 module deck1() {
 cube([box_x,box_y,deck_z]);
@@ -64,7 +68,7 @@ rotate([rott1,rott2,rott3]) cylinder(h=borders_width+8,r=rad, $fn=100); //cylind
 
 
 module boxWithHoles(){    
-//translate([box_x+5,0,0]){    
+translate([box_x+5,0,0]){    
 difference(){
 box1();
 
@@ -74,8 +78,19 @@ box1();
 #translate([movedisp_x,movedisp_y,-1]) cylinder(h=deck_z+5,d=disp_x, $fn=200); //displayhole
 
 }}
-//}
+}
+
+module hose(){
+difference(){
+union(){
+cylinder(h=hose_h,d=hose_inside_diameter,$fn=100);
+translate([0,0,1/2]) cube([hose_inside_diameter+5,hose_inside_diameter+5,1], center=true);
+}
+#cylinder(h=hose_h+2,d=hose_inside_diameter-hose_thickness, $fn=100);
+}
+}
+
 
 //boxWithHoles();
-deck();
-
+//deck();
+hose();
