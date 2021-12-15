@@ -31,6 +31,10 @@ movedisp_y=inside_y/2;
 hose_h=20;
 hose_inside_diameter=19.5;
 hose_thickness=1;
+//hose_conic
+hoseconic_h=20;
+hoseconic_inside_diameter=19.5;
+hoseconic_thickness=1;
 
 module deck1() {
 cube([box_x,box_y,deck_z]);
@@ -90,7 +94,17 @@ translate([0,0,1/2]) cube([hose_inside_diameter+5,hose_inside_diameter+5,1], cen
 }
 }
 
+module hoseconic(){
+difference(){
+union(){
+cylinder(h=hoseconic_h,d=hoseconic_inside_diameter,$fn=100);
+#translate([0,0,1/2]) cube([hoseconic_inside_diameter+5,hoseconic_inside_diameter+5,1], center=true);
+}
+#cylinder(h=hose_h+2,d=hoseconic_inside_diameter-hoseconic_thickness, $fn=100);
+}
+}
 
 //boxWithHoles();
 //deck();
-hose();
+//hose();
+hoseconic();
