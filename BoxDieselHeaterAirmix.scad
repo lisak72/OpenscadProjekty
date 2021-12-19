@@ -120,7 +120,7 @@ cylinder(h=hoseconic_h,d=hoseconic_inside_diameter,$fn=100);
 }}
 module submodule_hose_conic(){
 difference(){
-    rotate([0,0,45]) cylinder(h=hosepump_connection_h,d1=hosepump_cube_inside_diameter_conv+3,d2=hoseconic_inside_diameter,$fn=4);  
+    rotate([0,0,45]) cylinder(h=hosepump_connection_h,d1=hosepump_cube_inside_diameter_conv+4,d2=hoseconic_inside_diameter+2,$fn=4);  
     rotate([0,0,45]) cylinder(h=hosepump_connection_h+1,d1=hosepump_cube_inside_diameter_conv,d2=hoseconic_inside_diameter-3,$fn=4); 
     }
         }
