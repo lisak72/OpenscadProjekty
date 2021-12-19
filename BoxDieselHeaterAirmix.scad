@@ -35,6 +35,11 @@ hose_thickness=1;
 hoseconic_h=20;
 hoseconic_inside_diameter=19.5;
 hoseconic_thickness=1;
+//hosepump
+hosepump_cube_inside_diameter=40.5;
+hosepump_connection_h=20;
+hosepump_connection_cube_h=15;
+hosepump_cube_inside_diameter_conv=hosepump_cube_inside_diameter/sin(45);
 
 module deck1() {
 cube([box_x,box_y,deck_z]);
@@ -98,13 +103,47 @@ module hoseconic(){
 difference(){
 union(){
 cylinder(h=hoseconic_h,d=hoseconic_inside_diameter,$fn=100);
-#translate([0,0,1/2]) cube([hoseconic_inside_diameter+5,hoseconic_inside_diameter+5,1], center=true);
+translate([0,0,1/2]) cube([hoseconic_inside_diameter+5,hoseconic_inside_diameter+5,1], center=true);
 }
 #cylinder(h=hose_h+2,d=hoseconic_inside_diameter-hoseconic_thickness, $fn=100);
 }
 }
 
+module hosepump(){
+module submodule_hose_connection(){
+difference(){
+union(){
+cylinder(h=hoseconic_h,d=hoseconic_inside_diameter,$fn=100);
+//translate([0,0,1/2]) cube([hoseconic_inside_diameter+5,hoseconic_inside_diameter+5,1], center=true);
+}
+#cylinder(h=hose_h+20,d=hoseconic_inside_diameter-hoseconic_thickness, $fn=100);
+}}
+module submodule_hose_conic(){
+difference(){
+    rotate([0,0,45]) cylinder(h=hosepump_connection_h,d1=hosepump_cube_inside_diameter_conv+3,d2=hoseconic_inside_diameter,$fn=4);  
+    rotate([0,0,45]) cylinder(h=hosepump_connection_h+1,d1=hosepump_cube_inside_diameter_conv,d2=hoseconic_inside_diameter-3,$fn=4); 
+    }
+        }
+module submodule_hose_top(){
+        submodule_hose_conic();
+        translate([0,0,hosepump_connection_h/1.5]) submodule_hose_connection();
+            }
+            translate([0,0,hosepump_connection_cube_h/2]) submodule_hose_top();
+            difference(){
+            cube([hosepump_cube_inside_diameter+3,hosepump_cube_inside_diameter+3,hosepump_connection_cube_h], center=true);
+            cube([hosepump_cube_inside_diameter,hosepump_cube_inside_diameter,hosepump_connection_cube_h],center=true);
+            }    
+            }
+
+
+
+
 //boxWithHoles();
 //deck();
 //hose();
-hoseconic();
+//hoseconic();
+
+difference(){
+hosepump();
+translate([0,0,hosepump_connection_cube_h]) #cylinder(h=hose_h+2,d=hoseconic_inside_diameter-hoseconic_thickness, $fn=100);
+}
