@@ -1,5 +1,5 @@
 
-y_delka=175; //148 extra dlouha Helena style, 128 stred, 175 Pepa style
+y_delka=33; //148 extra dlouha Helena style, 128 stred, 175 Pepa style
 
 module prvni_kruh(){
 difference(){   

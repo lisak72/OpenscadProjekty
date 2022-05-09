@@ -1,17 +1,22 @@
 //in milimeters
 //material flex
 //t 90/245
-hole_diameter=34.5;
-outer_diameter=44.5;
+hole_diameter=2;
+outer_diameter=16;
 thickness=2;
+innerh=2;
+inner_diameter=11;
 
 module gasketRing(){
 translate([0,0,thickness/2+2]){
-difference(){
+difference(){    
+union(){
 //outer
 cylinder(h=thickness,r=outer_diameter/2,center=true,$fn=100);
+//inner
+ translate([0,0,innerh/2]) cylinder(h=thickness+innerh,r=inner_diameter/2,center=true,$fn=100); }   
 //hole
-cylinder(h=thickness+2,r=hole_diameter/2,center=true,$fn=100);
+cylinder(h=thickness+innerh+2,r=hole_diameter/2,center=true,$fn=100);
 }
 }}
 
@@ -26,7 +31,8 @@ cylinder(h=thickness+6,r=hole_diameter/2-3,center=true,$fn=100);
 } 
 }
 
+
 difference(){
-form();
+    //form();
 gasketRing();
 }

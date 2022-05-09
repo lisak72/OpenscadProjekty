@@ -29,11 +29,11 @@ movedisp_x=inside_x/2;
 movedisp_y=inside_y/2;
 //hose
 hose_h=20;
-hose_inside_diameter=19.5;
+hose_inside_diameter=34; //19.5
 hose_thickness=1;
 //hose_conic
-hoseconic_h=20;
-hoseconic_inside_diameter=19.5;
+hoseconic_h=25; //tube upper conic
+hoseconic_inside_diameter=hose_inside_diameter;
 hoseconic_thickness=1;
 //hosepump
 hosepump_cube_inside_diameter=40.5;
@@ -126,7 +126,7 @@ difference(){
         }
 module submodule_hose_top(){
         submodule_hose_conic();
-        translate([0,0,hosepump_connection_h/1.5]) submodule_hose_connection();
+        translate([0,0,hosepump_connection_h/1.9]) submodule_hose_connection();
             }
             translate([0,0,hosepump_connection_cube_h/2]) submodule_hose_top();
             difference(){
