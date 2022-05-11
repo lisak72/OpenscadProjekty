@@ -12,6 +12,7 @@
  deck_thickness=side_thickness;
  deck_angle=45;
  upper_cylinder_h=33;
+ upper_cylinder_plateau=25;
  hole_diameter=10+0.2;
  upper_cylinder_precizing_z=0.5;
  p3y=tan(deck_angle)*(diameter_bottom/2); 
@@ -45,7 +46,7 @@ module deck1(){
 
 module upper_tube(){
 difference(){
-cylinder(h=upper_cylinder_h,d=(hole_diameter+deck_thickness*2));
+cylinder(h=upper_cylinder_h,d1=(hole_diameter+deck_thickness*2),d2=upper_cylinder_plateau);
 
 }
 }
