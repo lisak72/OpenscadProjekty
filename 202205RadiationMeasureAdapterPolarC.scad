@@ -1,8 +1,9 @@
  //cover for measuring fluorescence on soil surface
  //designing for Czech Polar Centre, CB
- //Jiri Liska, Trebon, 2022
+ //Jiri Liska, Trebon, 2022, v. 03
  //print from black material, pctg or asa
- 
+ //printing - wall thickness:2mm; infill:15%
+
  $fn=100;
  bottom_height=14;
  diameter_bottom=65;
@@ -12,8 +13,9 @@
  deck_thickness=side_thickness;
  deck_angle=45;
  upper_cylinder_h=33;
- upper_cylinder_plateau=25;
- hole_diameter=10+0.2;
+ upper_cylinder_plateau=35;
+ hole_diameter=10+0.5;
+ cover_thickness=2;
  upper_cylinder_precizing_z=0.5;
  p3y=tan(deck_angle)*(diameter_bottom/2); 
 upper_cylinder_minus_value=tan(deck_angle)*((hole_diameter+deck_thickness)/2)+upper_cylinder_precizing_z;
@@ -51,7 +53,13 @@ cylinder(h=upper_cylinder_h,d1=(hole_diameter+deck_thickness*2),d2=upper_cylinde
 }
 }
 
+module cover(){
+cylinder(h=cover_thickness,d=diameter_bottom);
+cylinder(h=20, d=hole_diameter-0.8);
+}
+
 //execute
+/*
 difference(){
     union(){
         bottom_round();
@@ -60,3 +68,5 @@ difference(){
     } //union end
     translate([0,0,-0.5]) cylinder(h=bottom_height+p3y+upper_cylinder_h+1,d=hole_diameter);
 }
+*/
+cover();
