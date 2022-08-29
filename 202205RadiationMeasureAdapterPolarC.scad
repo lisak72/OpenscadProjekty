@@ -59,7 +59,7 @@ cylinder(h=20, d=hole_diameter-0.8);
 }
 
 //execute
-
+/*
 difference(){
     union(){
         bottom_round();
@@ -68,6 +68,5 @@ difference(){
     } //union end
     translate([0,0,-0.5]) cylinder(h=bottom_height+p3y+upper_cylinder_h+1,d=hole_diameter);
 }
-/*
-cover();
 */
+cover();
