@@ -68,5 +68,5 @@ difference(){
     } //union end
  # translate([0,0,-0.5]) cylinder(h=bottom_height+p3y+upper_cylinder_h+1,d=hole_diameter);
 }
-
-//cover();
+*/
+translate([100,0,0]) cover();
