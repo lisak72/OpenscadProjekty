@@ -3,9 +3,11 @@
 insideVert=107;
 insideVertR=insideVert/2;
 coverHoriz=140;
+useMinkowski=0;
 
 inside_z=25;
-thick=3;
+thick=6;
+capThick=3;
 $fn=100;
 
 module VerticalR(){
@@ -16,13 +18,22 @@ module VerticalR(){
 }
 
 module HorizontalCover(){
+    minkowski() {
+        {
     rotate_extrude() {
-        square(size=[coverHoriz/2,thick]);
+        square(size=[coverHoriz/2,capThick]);
+        }}
+       if(useMinkowski) rotate([90,0,0]) cylinder(h = 1, r = 1);
     }
 }
 
 
+module Cross(){
+    translate([0,-insideVertR,0]) cube([thick,insideVert,inside_z]);
+    rotate([0,0,90]) translate([0,-insideVertR,0]) cube([thick,insideVert,inside_z]);
+}
+
 
 VerticalR();
 HorizontalCover();
-
+Cross();
