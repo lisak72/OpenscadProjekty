@@ -4,7 +4,7 @@ insideVert=107;
 insideVertR=insideVert/2;
 coverHoriz=140;
 
-inside_z=75;
+inside_z=25;
 thick=3;
 $fn=100;
 

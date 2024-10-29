@@ -6,9 +6,9 @@ difference(){
     translate([20,60,72]) rotate ([90,0,0]) cylinder (h = 40, r=50, center = true, $fn=100); //vyrezavaci cylinder
 }
 */
-expansion=100; //percent
+expansion=110; //percent
 percentage=expansion/100;
-height=2.5;
+height=3.5;
 translate([0,0,0]){
 difference(){
 //vnejsi trubka
