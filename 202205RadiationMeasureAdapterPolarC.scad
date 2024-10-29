@@ -59,14 +59,14 @@ cylinder(h=20, d=hole_diameter-0.8);
 }
 
 //execute
-/*
+
 difference(){
     union(){
         bottom_round();
         translate([0,0,bottom_height]) deck1();
         translate([0,0,upper_cylinder_z_positioning]) upper_tube();
     } //union end
-    translate([0,0,-0.5]) cylinder(h=bottom_height+p3y+upper_cylinder_h+1,d=hole_diameter);
+ # translate([0,0,-0.5]) cylinder(h=bottom_height+p3y+upper_cylinder_h+1,d=hole_diameter);
 }
-*/
-cover();
+
+//cover();
