@@ -8,6 +8,9 @@ useMinkowski=0;
 inside_z=25;
 thick=6;
 capThick=3;
+
+//spacing middle
+spacingPercents=25;
 $fn=100;
 
 module VerticalR(){
@@ -29,11 +32,22 @@ module HorizontalCover(){
 
 
 module Cross(){
-    translate([0,-insideVertR,0]) cube([thick,insideVert,inside_z]);
-    rotate([0,0,90]) translate([0,-insideVertR,0]) cube([thick,insideVert,inside_z]);
+    translate([-thick/2,-insideVertR,0]) cube([thick,insideVert,inside_z]);
+    rotate([0,0,90]) translate([-thick/2,-insideVertR,0]) cube([thick,insideVert,inside_z]);
 }
 
+module SpacingMiddle(){
+   # translate([0,0,capThick]) cylinder(h = inside_z, r1 = insideVertR*spacingPercents/100, r2=insideVertR);
+}
 
+module CoverHose(){
 VerticalR();
 HorizontalCover();
 Cross();
+}
+
+
+difference() {
+CoverHose();
+SpacingMiddle(); 
+}
