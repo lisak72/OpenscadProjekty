@@ -1,5 +1,5 @@
-inside_x=120;
-inside_y=120;
+inside_x=120; //120
+inside_y=120; //120
 inside_z=75;
 borders_z=7;
 borders_width=2;
@@ -10,8 +10,8 @@ deck_z=2;
 //only for box
 //hole1 outdoor air
 hole1_radius=10.5;
-hole_x=35;
-hole_z=35;
+hole_x=35; //35
+hole_z=35; //35
 //hole2 combustion sucction
 hole2_radius=12;
 hole2_x=35;
@@ -36,7 +36,8 @@ hoseconic_h=25; //tube upper conic
 hoseconic_inside_diameter=hose_inside_diameter;
 hoseconic_thickness=1;
 //hosepump
-hosepump_cube_inside_diameter=40.5;
+hosepump_cube_inside_diameter=33; //40.5
+hosepump_cube_inside_diameter2=61; //40.5
 hosepump_connection_h=20;
 hosepump_connection_cube_h=15;
 hosepump_cube_inside_diameter_conv=hosepump_cube_inside_diameter/sin(45);
@@ -116,11 +117,11 @@ union(){
 cylinder(h=hoseconic_h,d=hoseconic_inside_diameter,$fn=100);
 //translate([0,0,1/2]) cube([hoseconic_inside_diameter+5,hoseconic_inside_diameter+5,1], center=true);
 }
-#cylinder(h=hose_h+20,d=hoseconic_inside_diameter-hoseconic_thickness, $fn=100);
+cylinder(h=hose_h+20,d=hoseconic_inside_diameter-hoseconic_thickness, $fn=100);
 }}
 module submodule_hose_conic(){
 difference(){
-    rotate([0,0,45]) cylinder(h=hosepump_connection_h,d1=hosepump_cube_inside_diameter_conv+4,d2=hoseconic_inside_diameter+2,$fn=4);  
+   # rotate([0,0,45]) cylinder(h=hosepump_connection_h,d1=hosepump_cube_inside_diameter_conv+4,d2=hoseconic_inside_diameter+2,$fn=4);  
     rotate([0,0,45]) cylinder(h=hosepump_connection_h+1,d1=hosepump_cube_inside_diameter_conv,d2=hoseconic_inside_diameter-3,$fn=4); 
     }
         }
@@ -130,8 +131,8 @@ module submodule_hose_top(){
             }
             translate([0,0,hosepump_connection_cube_h/2]) submodule_hose_top();
             difference(){
-            cube([hosepump_cube_inside_diameter+3,hosepump_cube_inside_diameter+3,hosepump_connection_cube_h], center=true);
-            cube([hosepump_cube_inside_diameter,hosepump_cube_inside_diameter,hosepump_connection_cube_h],center=true);
+            cube([hosepump_cube_inside_diameter+3,hosepump_cube_inside_diameter2+3,hosepump_connection_cube_h], center=true);
+            cube([hosepump_cube_inside_diameter,hosepump_cube_inside_diameter2,hosepump_connection_cube_h],center=true);
             }    
             }
 
